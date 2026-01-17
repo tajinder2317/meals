@@ -7,10 +7,10 @@ function MealItem({ title, imageUrl, duration, affordability, complexity }) {
           <Image source={{ uri: imageUrl }} style={styles.Image} />
           <Text style={styles.title}>{title}</Text>
         </View>
-        <View>
-          <Text>{duration} mins</Text>
-          <Text>{complexity.toUpperCase()}</Text>
-          <Text>{affordability.toUpperCase()}</Text>
+        <View style={styles.details}>
+          <Text style={styles.detailItem}>{duration} mins</Text>
+          <Text style={styles.detailItem}>{complexity.toUpperCase()}</Text>
+          <Text style={styles.detailItem}>{affordability.toUpperCase()}</Text>
         </View>
       </Pressable>
     </View>
@@ -33,5 +33,15 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 18,
+  },
+  details: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 8,
+  },
+  detailItem: {
+    marginHorizontal: 4,
+    fontSize: 12,
   },
 });
